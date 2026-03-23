@@ -215,6 +215,7 @@
   <a href="#sandbox">Sandbox</a>
   <a href="#saves">Save System</a>
   <a href="#sharing">Sharing</a>
+  <a href="#scenario">Day &amp; Night</a>
   <a href="#visibility">Visibility</a>
   <a href="#flowchart">Full Flow</a>
   <a href="#reference">Reference</a>
@@ -437,6 +438,127 @@
       </svg>
       <p class="diagram-caption">A feature can move from one project to another without disrupting either team.</p>
     </div>
+  </div>
+
+  <!-- SECTION 4B: REAL-WORLD SCENARIO -->
+  <div class="section" id="scenario">
+    <div class="section-header">
+      <div class="section-icon" style="background:#FEF3E7;">🌍</div>
+      <div>
+        <span class="num">Real-World Scenario</span>
+        <h2>You Work Days. Your Boss Works Nights. No Problem.</h2>
+      </div>
+    </div>
+    <p>Here's a practical example of how this all works in the real world.</p>
+    <p>You spend your day building out a financial report. Your boss, based in America, jumps on in the evening and makes a series of his own changes to his version of the project. By the time you're back at your desk the next morning, he's done a bunch of work.</p>
+    <p>Now you have two options and you need to decide: <em>"Which of his changes do I actually want? And which ones do I want to leave out?"</em></p>
+
+    <div class="callout orange">
+      <strong>The setup is called a Fork.</strong> You have your own independent copy of the project. His copy is labelled the "original" (called the <strong>upstream</strong>). You can see every change he's ever made — but nothing he does automatically lands in yours. You decide what comes in and when.
+    </div>
+
+    <!-- TIMELINE DIAGRAM -->
+    <div class="diagram">
+      <svg width="700" height="310" viewBox="0 0 700 310" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arr-b" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#1E6FCC"/></marker>
+          <marker id="arr-o" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#E87B2B"/></marker>
+          <marker id="arr-g" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2AAD6E"/></marker>
+        </defs>
+
+        <!-- Labels -->
+        <text x="20" y="75" font-size="12" font-weight="700" fill="#E87B2B">Boss's Project</text>
+        <text x="20" y="220" font-size="12" font-weight="700" fill="#1E6FCC">Your Project</text>
+
+        <!-- Boss timeline -->
+        <line x1="140" y1="70" x2="660" y2="70" stroke="#E87B2B" stroke-width="2.5" marker-end="url(#arr-o)"/>
+
+        <!-- Boss saves -->
+        <circle cx="200" cy="70" r="10" fill="#E87B2B"/>
+        <text x="200" y="50" text-anchor="middle" font-size="10" fill="#E87B2B">His change 1</text>
+
+        <circle cx="340" cy="70" r="10" fill="#E87B2B"/>
+        <text x="340" y="50" text-anchor="middle" font-size="10" fill="#E87B2B">His change 2</text>
+
+        <circle cx="480" cy="70" r="10" fill="#E87B2B"/>
+        <text x="480" y="50" text-anchor="middle" font-size="10" fill="#E87B2B">His change 3</text>
+
+        <circle cx="610" cy="70" r="10" fill="#E87B2B"/>
+        <text x="610" y="50" text-anchor="middle" font-size="10" fill="#E87B2B">His change 4</text>
+
+        <!-- Your timeline -->
+        <line x1="140" y1="215" x2="660" y2="215" stroke="#1E6FCC" stroke-width="2.5" marker-end="url(#arr-b)"/>
+
+        <!-- Your saves -->
+        <circle cx="200" cy="215" r="10" fill="#1E6FCC"/>
+        <text x="200" y="245" text-anchor="middle" font-size="10" fill="#1E6FCC">Your change 1</text>
+
+        <circle cx="370" cy="215" r="10" fill="#1E6FCC"/>
+        <text x="370" y="245" text-anchor="middle" font-size="10" fill="#1E6FCC">Your change 2</text>
+
+        <!-- Bring in change 2 (want it) -->
+        <line x1="340" y1="82" x2="340" y2="155" stroke="#2AAD6E" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arr-g)"/>
+        <rect x="248" y="130" width="120" height="28" rx="6" fill="#EAFAF1" stroke="#2AAD6E" stroke-width="1.5"/>
+        <text x="308" y="148" text-anchor="middle" font-size="10" fill="#1a7a4a">You want this one</text>
+        <circle cx="308" cy="203" r="10" fill="#2AAD6E"/>
+        <text x="308" y="245" text-anchor="middle" font-size="10" fill="#2AAD6E">Pulled in</text>
+
+        <!-- Skip change 4 (don't want it) -->
+        <line x1="610" y1="82" x2="610" y2="155" stroke="#D1D5DB" stroke-width="2" stroke-dasharray="4,4"/>
+        <rect x="530" y="130" width="130" height="28" rx="6" fill="#FFF0F0" stroke="#F87171" stroke-width="1.5"/>
+        <text x="595" y="148" text-anchor="middle" font-size="10" fill="#DC2626">You skip this one</text>
+
+        <!-- Middle label -->
+        <text x="350" y="175" text-anchor="middle" font-size="11" fill="#9CA3AF" font-style="italic">You choose exactly what comes into your project</text>
+      </svg>
+      <p class="diagram-caption">Both timelines run independently. You pick which of his changes you want — nothing is automatic.</p>
+    </div>
+
+    <p>In practical terms this means:</p>
+    <p style="margin-left:1.2rem;">
+      &nbsp;✦&nbsp; You can see every branch and change your boss has made<br/>
+      &nbsp;✦&nbsp; You preview his changes before deciding<br/>
+      &nbsp;✦&nbsp; You bring in only what you want — one piece at a time if needed<br/>
+      &nbsp;✦&nbsp; Your project stays unaffected until <em>you</em> decide otherwise<br/>
+      &nbsp;✦&nbsp; If you later want his change 4, you can pull it in at any time
+    </p>
+
+    <div class="callout green">
+      <strong>The golden rule:</strong> Nothing crosses from his project into yours automatically. You are always in control of what enters your project and when.
+    </div>
+
+    <!-- HOW IT WORKS IN PRACTICE TABLE -->
+    <table style="margin-top:1.5rem;">
+      <thead>
+        <tr>
+          <th>Situation</th>
+          <th>What You Do</th>
+          <th>What Happens</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Boss makes a change you love</td>
+          <td>Tell Hermes: "Bring in his Feature X"</td>
+          <td>That specific piece is copied into your project cleanly</td>
+        </tr>
+        <tr>
+          <td>Boss makes a change you're unsure about</td>
+          <td>Preview it first in a test environment</td>
+          <td>You see it live before it touches your main project</td>
+        </tr>
+        <tr>
+          <td>Boss makes a change you don't want</td>
+          <td>Do nothing</td>
+          <td>It stays in his project, never affects yours</td>
+        </tr>
+        <tr>
+          <td>You want everything he did last night</td>
+          <td>Tell Hermes: "Sync from boss's latest"</td>
+          <td>All his recent changes come in at once</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <!-- SECTION 5: VISIBILITY -->
