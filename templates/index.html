@@ -221,6 +221,7 @@
   <a href="#visibility">Visibility</a>
   <a href="#flowchart">Full Flow</a>
   <a href="#reference">Reference</a>
+  <a href="#cheatsheet">Cheat Sheet</a>
 </nav>
 
 <!-- HERO -->
@@ -1136,6 +1137,80 @@
         </tr>
       </tbody>
     </table>
+  </div>
+
+  <!-- CHEAT SHEET -->
+  <div class="section" id="cheatsheet">
+    <div class="section-header">
+      <div class="section-icon" style="background:#FEF3E7;">⚡</div>
+      <div>
+        <span class="num">Quick Reference</span>
+        <h2>Cheat Sheet — Easy Wins</h2>
+      </div>
+    </div>
+    <p>Everything you need in one place. Bookmark this section.</p>
+
+    <table style="margin-top:1rem;">
+      <thead>
+        <tr><th>What you want to do</th><th>What you tell Hermes</th><th>What happens</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>See Employee Y's latest branches</td>
+          <td>"Fetch Employee Y's latest branches"</td>
+          <td>Their branches download silently — your project unchanged</td>
+        </tr>
+        <tr>
+          <td>Preview Employee Y's branch live</td>
+          <td>"Deploy Employee Y's [branch name] to a preview environment"</td>
+          <td>A second Railway URL spins up — you can click around it safely</td>
+        </tr>
+        <tr>
+          <td>Take one specific change from their branch</td>
+          <td>"Cherry-pick their [description] change into mine"</td>
+          <td>Only that piece lands in your project — nothing else</td>
+        </tr>
+        <tr>
+          <td>Take an entire branch</td>
+          <td>"Merge Employee Y's [branch name] into my project"</td>
+          <td>The whole branch merges in at once</td>
+        </tr>
+        <tr>
+          <td>Save your work and go live</td>
+          <td>"Save this and deploy it"</td>
+          <td>Hermes commits to GitHub and Railway updates your live site</td>
+        </tr>
+        <tr>
+          <td>Undo something that went wrong</td>
+          <td>"Roll back to the last working version"</td>
+          <td>Hermes restores the previous save point — nothing is permanently broken</td>
+        </tr>
+        <tr>
+          <td>Give Employee Y access to your repo</td>
+          <td>"Add [their GitHub username] as a collaborator"</td>
+          <td>They receive an invitation and can see your repository</td>
+        </tr>
+        <tr>
+          <td>See what changed in a branch</td>
+          <td>"Show me what's in Employee Y's [branch name]"</td>
+          <td>Hermes lists every commit with a plain English summary</td>
+        </tr>
+        <tr>
+          <td>Create a new branch for your work</td>
+          <td>"Create a new branch called [name]"</td>
+          <td>A fresh isolated workspace is ready — main project untouched</td>
+        </tr>
+        <tr>
+          <td>Check what's running live on Railway</td>
+          <td>"What's currently deployed on Railway?"</td>
+          <td>Hermes tells you which branch is live and its status</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout blue" style="margin-top:2rem;">
+      <strong>Remember:</strong> You never need to know a command, open a terminal, or touch GitHub or Railway directly. Every single action in this cheat sheet is one plain English sentence to Hermes. That's the whole system.
+    </div>
   </div>
 
 </div><!-- /content -->
