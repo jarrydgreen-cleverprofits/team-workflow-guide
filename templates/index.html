@@ -215,6 +215,7 @@
   <a href="#sandbox">Sandbox</a>
   <a href="#saves">Save System</a>
   <a href="#sharing">Sharing</a>
+  <a href="#access">GitHub Access</a>
   <a href="#scenario">Day &amp; Night</a>
   <a href="#cherrypick">Cherry-Pick</a>
   <a href="#visibility">Visibility</a>
@@ -575,6 +576,156 @@
         </tr>
       </tbody>
     </table>
+  </div>
+
+  <!-- SECTION: GITHUB ACCESS -->
+  <div class="section" id="access">
+    <div class="section-header">
+      <div class="section-icon" style="background:#EBF4FF;">🔑</div>
+      <div>
+        <span class="num">Before Anything Else</span>
+        <h2>Getting Access to Each Other's GitHub</h2>
+      </div>
+    </div>
+    <p>Before you can see your boss's branches, borrow his code, or share yours with him — you need to be able to see each other's GitHub repositories. This section explains how that works from scratch.</p>
+
+    <h3 style="font-size:1.2rem;font-weight:700;color:#1A1A2E;margin:1.5rem 0 0.8rem;">Two Types of Repositories</h3>
+    <p>Every project on GitHub is stored in a <strong>repository</strong> — think of it as a folder in the cloud that holds all the code, all the save points, and all the branches for one project. Every repository is either:</p>
+
+    <table style="margin-top:1rem;">
+      <thead><tr><th>Type</th><th>What it means</th><th>Who can see it</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Public</td>
+          <td>Anyone on the internet can view it</td>
+          <td>No invitation needed — just visit the link</td>
+        </tr>
+        <tr>
+          <td>Private</td>
+          <td>Hidden — only people explicitly invited can see it</td>
+          <td>Must be added as a collaborator by the owner</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout blue">
+      <strong>In our team:</strong> Most working project repositories are <strong>private</strong>. This means you and your boss need to actively invite each other before either of you can see the other's code. This is a one-time setup — once done, it stays in place.
+    </div>
+
+    <h3 style="font-size:1.2rem;font-weight:700;color:#1A1A2E;margin:1.5rem 0 0.8rem;">How to Invite Someone to Your Repository</h3>
+    <p>The owner of a repository controls who gets access. Here is the step-by-step — no technical knowledge required:</p>
+
+    <div class="diagram">
+      <svg width="680" height="200" viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="inv-arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#9CA3AF"/>
+          </marker>
+        </defs>
+        <rect x="10"  y="60" width="130" height="70" rx="10" fill="#EBF4FF" stroke="#1E6FCC" stroke-width="2"/>
+        <text x="75"  y="90" text-anchor="middle" font-size="12" font-weight="700" fill="#1E6FCC">Step 1</text>
+        <text x="75"  y="108" text-anchor="middle" font-size="10" fill="#333">Go to your repo</text>
+        <text x="75"  y="122" text-anchor="middle" font-size="10" fill="#6B7280">on GitHub.com</text>
+        <line x1="140" y1="95" x2="168" y2="95" stroke="#9CA3AF" stroke-width="2" marker-end="url(#inv-arr)"/>
+
+        <rect x="170" y="60" width="130" height="70" rx="10" fill="#EBF4FF" stroke="#1E6FCC" stroke-width="2"/>
+        <text x="235" y="90" text-anchor="middle" font-size="12" font-weight="700" fill="#1E6FCC">Step 2</text>
+        <text x="235" y="108" text-anchor="middle" font-size="10" fill="#333">Click Settings</text>
+        <text x="235" y="122" text-anchor="middle" font-size="10" fill="#6B7280">top menu tab</text>
+        <line x1="300" y1="95" x2="328" y2="95" stroke="#9CA3AF" stroke-width="2" marker-end="url(#inv-arr)"/>
+
+        <rect x="330" y="60" width="130" height="70" rx="10" fill="#EBF4FF" stroke="#1E6FCC" stroke-width="2"/>
+        <text x="395" y="90" text-anchor="middle" font-size="12" font-weight="700" fill="#1E6FCC">Step 3</text>
+        <text x="395" y="108" text-anchor="middle" font-size="10" fill="#333">Collaborators</text>
+        <text x="395" y="122" text-anchor="middle" font-size="10" fill="#6B7280">left sidebar</text>
+        <line x1="460" y1="95" x2="488" y2="95" stroke="#9CA3AF" stroke-width="2" marker-end="url(#inv-arr)"/>
+
+        <rect x="490" y="60" width="175" height="70" rx="10" fill="#EAFAF1" stroke="#2AAD6E" stroke-width="2"/>
+        <text x="577" y="90" text-anchor="middle" font-size="12" font-weight="700" fill="#2AAD6E">Step 4</text>
+        <text x="577" y="108" text-anchor="middle" font-size="10" fill="#333">Add person by their</text>
+        <text x="577" y="122" text-anchor="middle" font-size="10" fill="#6B7280">GitHub username</text>
+
+        <text x="340" y="170" text-anchor="middle" font-size="11" fill="#9CA3AF" font-style="italic">They receive an email invitation. Once accepted, they can see your repository.</text>
+      </svg>
+    </div>
+
+    <div class="callout green">
+      <strong>What to share:</strong> All you need is the other person's <strong>GitHub username</strong>. That's their handle on GitHub — for example <em>jarrydgreen-cleverprofits</em>. Ask your boss for his, share yours with him, and Hermes can handle the rest if needed.
+    </div>
+
+    <h3 style="font-size:1.2rem;font-weight:700;color:#1A1A2E;margin:1.5rem 0 0.8rem;">Two Ways to Connect to Someone's Repository</h3>
+    <p>Once you can see someone's repository, there are two ways to connect to it depending on your goal:</p>
+
+    <table style="margin-top:1rem;">
+      <thead><tr><th>Method</th><th>Plain English</th><th>When to Use It</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Fork</td>
+          <td>Create your own independent copy of their entire repository — with a permanent live link back to theirs</td>
+          <td>When you want to build your own version of someone's project and regularly pick up their improvements over time</td>
+        </tr>
+        <tr>
+          <td>Add as Upstream</td>
+          <td>Tell your existing repository "keep an eye on this other person's repository"</td>
+          <td>When you already have your own repo and just want to be able to pull specific pieces from theirs</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout orange">
+      <strong>In our scenario:</strong> Jarryd works on his own dashboard project during the day. His boss in America works on his version in the evenings. Jarryd's repository has the boss's repository added as an <strong>upstream</strong> — meaning Jarryd can see every branch and every save his boss has made, at any time, and choose exactly what to bring in. The boss's project is unaffected either way.
+    </div>
+
+    <h3 style="font-size:1.2rem;font-weight:700;color:#1A1A2E;margin:1.5rem 0 0.8rem;">How to Get the Information — Fetching</h3>
+    <p>Once access is set up, getting your boss's latest work onto your machine is a single instruction to Hermes: <em>"Fetch the boss's latest branches."</em></p>
+    <p>What happens behind the scenes:</p>
+    <p style="margin-left:1.2rem;">
+      &nbsp;✦&nbsp; GitHub downloads a copy of all his branches silently to your machine<br/>
+      &nbsp;✦&nbsp; <strong>Nothing in your project changes</strong> — you are just downloading so you can look<br/>
+      &nbsp;✦&nbsp; Hermes then lists what branches he has, with a plain English summary of each<br/>
+      &nbsp;✦&nbsp; You decide which ones interest you — then move to the preview or cherry-pick steps
+    </p>
+
+    <div class="diagram">
+      <svg width="680" height="180" viewBox="0 0 680 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="fetch-arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#1E6FCC"/>
+          </marker>
+        </defs>
+        <!-- Boss GitHub box -->
+        <rect x="20" y="40" width="180" height="100" rx="12" fill="#FEF3E7" stroke="#E87B2B" stroke-width="2"/>
+        <text x="110" y="70" text-anchor="middle" font-size="13" font-weight="700" fill="#E87B2B">Boss's GitHub</text>
+        <text x="110" y="92" text-anchor="middle" font-size="11" fill="#555">branch: new-report</text>
+        <text x="110" y="110" text-anchor="middle" font-size="11" fill="#555">branch: fix-totals</text>
+        <text x="110" y="128" text-anchor="middle" font-size="11" fill="#555">branch: redesign</text>
+
+        <!-- Fetch arrow -->
+        <line x1="202" y1="90" x2="318" y2="90" stroke="#1E6FCC" stroke-width="2.5" marker-end="url(#fetch-arr)"/>
+        <rect x="210" y="62" width="110" height="36" rx="8" fill="#EBF4FF" stroke="#1E6FCC" stroke-width="1.5"/>
+        <text x="265" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#1E6FCC">"Fetch boss's</text>
+        <text x="265" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="#1E6FCC">latest"</text>
+
+        <!-- Your machine box -->
+        <rect x="320" y="40" width="180" height="100" rx="12" fill="#EBF4FF" stroke="#1E6FCC" stroke-width="2"/>
+        <text x="410" y="70" text-anchor="middle" font-size="13" font-weight="700" fill="#1E6FCC">Your Machine</text>
+        <text x="410" y="92" text-anchor="middle" font-size="11" fill="#555">boss/new-report ✓</text>
+        <text x="410" y="110" text-anchor="middle" font-size="11" fill="#555">boss/fix-totals ✓</text>
+        <text x="410" y="128" text-anchor="middle" font-size="11" fill="#555">boss/redesign ✓</text>
+
+        <!-- Note -->
+        <rect x="516" y="55" width="155" height="70" rx="10" fill="#EAFAF1" stroke="#2AAD6E" stroke-width="1.5"/>
+        <text x="593" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#2AAD6E">Your project:</text>
+        <text x="593" y="96" text-anchor="middle" font-size="10" fill="#555">completely</text>
+        <text x="593" y="112" text-anchor="middle" font-size="10" fill="#555">unchanged</text>
+
+        <text x="340" y="168" text-anchor="middle" font-size="11" fill="#9CA3AF" font-style="italic">Fetching only downloads — it does not change a single line of your code.</text>
+      </svg>
+    </div>
+
+    <div class="callout blue">
+      <strong>Remember:</strong> You never do any of this manually. You tell Hermes in plain English — "fetch the boss's latest" or "show me his branches" — and it handles everything. GitHub and Railway are working in the background. You just make the decisions.
+    </div>
   </div>
 
   <!-- SECTION: FETCHING + CHERRY-PICKING -->
