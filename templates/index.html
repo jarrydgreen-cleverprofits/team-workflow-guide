@@ -216,6 +216,7 @@
   <a href="#saves">Save System</a>
   <a href="#sharing">Sharing</a>
   <a href="#scenario">Day &amp; Night</a>
+  <a href="#cherrypick">Cherry-Pick</a>
   <a href="#visibility">Visibility</a>
   <a href="#flowchart">Full Flow</a>
   <a href="#reference">Reference</a>
@@ -556,6 +557,246 @@
           <td>You want everything he did last night</td>
           <td>Tell Hermes: "Sync from boss's latest"</td>
           <td>All his recent changes come in at once</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION: FETCHING + CHERRY-PICKING -->
+  <div class="section" id="cherrypick">
+    <div class="section-header">
+      <div class="section-icon" style="background:#EAFAF1;">🍒</div>
+      <div>
+        <span class="num">How To</span>
+        <h2>Getting Your Boss's Work Into Yours — Step by Step</h2>
+      </div>
+    </div>
+    <p>Your boss has been building on his project. He's created branches on GitHub. Here's exactly how you get what you want from his project into yours — safely, selectively, and without touching anything you didn't choose to touch.</p>
+
+    <div class="callout blue">
+      <strong>Remember:</strong> Railway deploys from <em>your</em> GitHub. His code never goes directly to your live site — it always passes through your GitHub first. You are always the gatekeeper.
+    </div>
+
+    <!-- THE 3-STEP FLOW -->
+    <div class="diagram">
+      <svg width="700" height="160" viewBox="0 0 700 160" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="step-arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#9CA3AF"/>
+          </marker>
+        </defs>
+        <!-- Step 1 -->
+        <rect x="20" y="40" width="180" height="70" rx="10" fill="#EBF4FF" stroke="#1E6FCC" stroke-width="2"/>
+        <text x="110" y="68" text-anchor="middle" font-size="13" font-weight="700" fill="#1E6FCC">Step 1</text>
+        <text x="110" y="86" text-anchor="middle" font-size="11" fill="#333">Fetch his branches</text>
+        <text x="110" y="102" text-anchor="middle" font-size="10" fill="#6B7280">(download, don't change anything)</text>
+        <line x1="200" y1="75" x2="248" y2="75" stroke="#9CA3AF" stroke-width="2" marker-end="url(#step-arr)"/>
+        <!-- Step 2 -->
+        <rect x="250" y="40" width="180" height="70" rx="10" fill="#FEF3E7" stroke="#E87B2B" stroke-width="2"/>
+        <text x="340" y="68" text-anchor="middle" font-size="13" font-weight="700" fill="#E87B2B">Step 2</text>
+        <text x="340" y="86" text-anchor="middle" font-size="11" fill="#333">Preview his branch live</text>
+        <text x="340" y="102" text-anchor="middle" font-size="10" fill="#6B7280">(separate Railway URL, safe)</text>
+        <line x1="430" y1="75" x2="478" y2="75" stroke="#9CA3AF" stroke-width="2" marker-end="url(#step-arr)"/>
+        <!-- Step 3 -->
+        <rect x="480" y="40" width="200" height="70" rx="10" fill="#EAFAF1" stroke="#2AAD6E" stroke-width="2"/>
+        <text x="580" y="68" text-anchor="middle" font-size="13" font-weight="700" fill="#2AAD6E">Step 3</text>
+        <text x="580" y="86" text-anchor="middle" font-size="11" fill="#333">Cherry-pick what you want</text>
+        <text x="580" y="102" text-anchor="middle" font-size="10" fill="#6B7280">(bring only the piece you like)</text>
+        <!-- Labels -->
+        <text x="350" y="145" text-anchor="middle" font-size="11" fill="#9CA3AF" font-style="italic">Your main site is untouched until Step 3 — and even then, only what you choose comes in.</text>
+      </svg>
+    </div>
+
+    <!-- WHAT IS CHERRY-PICKING -->
+    <h3 style="font-size:1.25rem; font-weight:700; color:#1A1A2E; margin:2rem 0 0.8rem;">What Is Cherry-Picking?</h3>
+    <p>Imagine your boss made 10 changes last night. They're all bundled together in his branch. You look through them and think:</p>
+    <p style="margin-left:1.2rem; font-style:italic; color:#555;">
+      "I love changes 3 and 7. Changes 1, 2, 4, 5, 6, 8, 9, and 10 I'm not ready for yet."
+    </p>
+    <p>Cherry-picking lets you take <strong>exactly changes 3 and 7</strong> — nothing else. They land in your project cleanly, as if you had written them yourself. The other 8 changes stay in his project untouched.</p>
+
+    <div class="callout orange">
+      <strong>Analogy:</strong> Think of your boss's branch like a fruit bowl with 10 pieces of fruit. You don't have to take the whole bowl. You pick the two cherries you want, leave the rest in his bowl, and put your two cherries into your own bowl. His bowl is still full. Yours now has exactly what you wanted.
+    </div>
+
+    <!-- CHERRY-PICK DIAGRAM -->
+    <div class="diagram">
+      <svg width="700" height="280" viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="cp-arr-g" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2AAD6E"/></marker>
+          <marker id="cp-arr-r" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#F87171"/></marker>
+          <marker id="cp-arr-b" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#1E6FCC"/></marker>
+        </defs>
+
+        <!-- Boss's branch label -->
+        <text x="30" y="30" font-size="12" font-weight="700" fill="#E87B2B">Boss's Branch (10 changes)</text>
+        <line x1="30" y1="55" x2="670" y2="55" stroke="#E87B2B" stroke-width="2"/>
+
+        <!-- His commits -->
+        <circle cx="80"  cy="55" r="16" fill="#E87B2B22" stroke="#E87B2B" stroke-width="1.5"/>
+        <text x="80"  cy="55" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#E87B2B" y="55">C1</text>
+
+        <circle cx="140" cy="55" r="16" fill="#E87B2B22" stroke="#E87B2B" stroke-width="1.5"/>
+        <text x="140" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#E87B2B" y="55">C2</text>
+
+        <circle cx="200" cy="55" r="18" fill="#2AAD6E33" stroke="#2AAD6E" stroke-width="2.5"/>
+        <text x="200" text-anchor="middle" dominant-baseline="middle" font-size="10" font-weight="700" fill="#2AAD6E" y="55">C3 ⭐</text>
+
+        <circle cx="260" cy="55" r="16" fill="#E87B2B22" stroke="#E87B2B" stroke-width="1.5"/>
+        <text x="260" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#E87B2B" y="55">C4</text>
+
+        <circle cx="320" cy="55" r="16" fill="#E87B2B22" stroke="#E87B2B" stroke-width="1.5"/>
+        <text x="320" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#E87B2B" y="55">C5</text>
+
+        <circle cx="380" cy="55" r="16" fill="#E87B2B22" stroke="#E87B2B" stroke-width="1.5"/>
+        <text x="380" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#E87B2B" y="55">C6</text>
+
+        <circle cx="440" cy="55" r="18" fill="#2AAD6E33" stroke="#2AAD6E" stroke-width="2.5"/>
+        <text x="440" text-anchor="middle" dominant-baseline="middle" font-size="10" font-weight="700" fill="#2AAD6E" y="55">C7 ⭐</text>
+
+        <circle cx="500" cy="55" r="16" fill="#E87B2B22" stroke="#E87B2B" stroke-width="1.5"/>
+        <text x="500" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#E87B2B" y="55">C8</text>
+
+        <circle cx="560" cy="55" r="16" fill="#E87B2B22" stroke="#E87B2B" stroke-width="1.5"/>
+        <text x="560" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#E87B2B" y="55">C9</text>
+
+        <circle cx="620" cy="55" r="16" fill="#E87B2B22" stroke="#E87B2B" stroke-width="1.5"/>
+        <text x="620" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#E87B2B" y="55">C10</text>
+
+        <!-- Arrows down for C3 and C7 -->
+        <line x1="200" y1="74" x2="200" y2="158" stroke="#2AAD6E" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#cp-arr-g)"/>
+        <line x1="440" y1="74" x2="440" y2="158" stroke="#2AAD6E" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#cp-arr-g)"/>
+
+        <!-- X marks for skipped -->
+        <text x="80"  y="120" text-anchor="middle" font-size="14" fill="#F87171">✕</text>
+        <text x="140" y="120" text-anchor="middle" font-size="14" fill="#F87171">✕</text>
+        <text x="260" y="120" text-anchor="middle" font-size="14" fill="#F87171">✕</text>
+        <text x="320" y="120" text-anchor="middle" font-size="14" fill="#F87171">✕</text>
+        <text x="380" y="120" text-anchor="middle" font-size="14" fill="#F87171">✕</text>
+        <text x="500" y="120" text-anchor="middle" font-size="14" fill="#F87171">✕</text>
+        <text x="560" y="120" text-anchor="middle" font-size="14" fill="#F87171">✕</text>
+        <text x="620" y="120" text-anchor="middle" font-size="14" fill="#F87171">✕</text>
+
+        <!-- Your branch -->
+        <text x="30" y="185" font-size="12" font-weight="700" fill="#1E6FCC">Your Branch (before + after)</text>
+        <line x1="30" y1="210" x2="670" y2="210" stroke="#1E6FCC" stroke-width="2"/>
+
+        <circle cx="100" cy="210" r="16" fill="#1E6FCC22" stroke="#1E6FCC" stroke-width="1.5"/>
+        <text x="100" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#1E6FCC" y="210">Y1</text>
+
+        <circle cx="170" cy="210" r="16" fill="#1E6FCC22" stroke="#1E6FCC" stroke-width="1.5"/>
+        <text x="170" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#1E6FCC" y="210">Y2</text>
+
+        <!-- C3 cherry-picked in -->
+        <circle cx="280" cy="210" r="18" fill="#2AAD6E33" stroke="#2AAD6E" stroke-width="2.5"/>
+        <text x="280" text-anchor="middle" dominant-baseline="middle" font-size="10" font-weight="700" fill="#2AAD6E" y="210">C3 ✓</text>
+
+        <!-- C7 cherry-picked in -->
+        <circle cx="390" cy="210" r="18" fill="#2AAD6E33" stroke="#2AAD6E" stroke-width="2.5"/>
+        <text x="390" text-anchor="middle" dominant-baseline="middle" font-size="10" font-weight="700" fill="#2AAD6E" y="210">C7 ✓</text>
+
+        <circle cx="500" cy="210" r="16" fill="#1E6FCC22" stroke="#1E6FCC" stroke-width="1.5"/>
+        <text x="500" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#1E6FCC" y="210">Y3</text>
+
+        <text x="350" y="268" text-anchor="middle" font-size="11" fill="#9CA3AF" font-style="italic">Only C3 and C7 entered your branch. The other 8 changes never touched your project.</text>
+      </svg>
+      <p class="diagram-caption">Cherry-picking = surgical precision. Take exactly what you want, nothing more.</p>
+    </div>
+
+    <!-- WHY IT MATTERS -->
+    <h3 style="font-size:1.25rem; font-weight:700; color:#1A1A2E; margin:2rem 0 0.8rem;">Why Cherry-Picking Matters</h3>
+    <p>Without cherry-picking, your only options would be: take everything or take nothing. That's a problem because:</p>
+    <p style="margin-left:1.2rem;">
+      &nbsp;✦&nbsp; Your boss might bundle a feature you love with a change that breaks your layout<br/>
+      &nbsp;✦&nbsp; You might not be ready for all his changes yet — but you need one specific piece now<br/>
+      &nbsp;✦&nbsp; You might want to test one piece in isolation before committing to the rest
+    </p>
+    <p>Cherry-picking solves all three problems. It is arguably the most important tool in a collaborative coding workflow.</p>
+
+    <!-- WHAT CHERRY-PICKING NEEDS -->
+    <h3 style="font-size:1.25rem; font-weight:700; color:#1A1A2E; margin:2rem 0 0.8rem;">What Needs to Be in Place for Cherry-Picking to Work</h3>
+    <p>Cherry-picking only works cleanly when certain conditions are met. Think of it like surgery — it needs a clean operating environment.</p>
+
+    <table style="margin-top:1rem;">
+      <thead>
+        <tr>
+          <th>Requirement</th>
+          <th>Plain English</th>
+          <th>What Happens If Missing</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Clean, small saves (commits)</td>
+          <td>Each save should do one thing only — not ten things at once</td>
+          <td>You can't pick the one piece you want without dragging in everything else</td>
+        </tr>
+        <tr>
+          <td>Descriptive save labels</td>
+          <td>Each save should have a clear name — "added profit margin column" not "update"</td>
+          <td>You won't know which save contains what you're looking for</td>
+        </tr>
+        <tr>
+          <td>Access to his repository</td>
+          <td>You need to be able to see his GitHub project (public or invited)</td>
+          <td>You can't fetch his branches if you can't see his repo</td>
+        </tr>
+        <tr>
+          <td>No conflicting changes</td>
+          <td>You and your boss shouldn't have both edited the exact same line of code</td>
+          <td>A "conflict" occurs — needs manual resolution before the cherry-pick lands</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout green">
+      <strong>The golden rule for your boss:</strong> Ask him to make small, focused saves with clear labels. One feature per save. This makes cherry-picking trivial — you can see exactly what each save does and take it or leave it in seconds.
+    </div>
+
+    <!-- CONFLICT EXPLAINED -->
+    <h3 style="font-size:1.25rem; font-weight:700; color:#1A1A2E; margin:2rem 0 0.8rem;">What Is a Conflict — and Should You Worry?</h3>
+    <p>A conflict happens when both you and your boss have edited the exact same line of code in different ways. Git doesn't know whose version to keep, so it flags it and asks you to decide.</p>
+    <div class="callout orange">
+      <strong>Analogy:</strong> You and your boss both rewrote the same sentence in a shared document at the same time — differently. Now someone has to decide which version stays. That's a conflict. It sounds scary but it's normal — and Hermes handles it for you.
+    </div>
+    <p>In practice, conflicts are rare if you and your boss are working on different parts of the project. The more separated your work areas, the smoother cherry-picking becomes.</p>
+
+    <!-- SUMMARY WORKFLOW -->
+    <h3 style="font-size:1.25rem; font-weight:700; color:#1A1A2E; margin:2rem 0 0.8rem;">The Full Workflow — From His Branch to Your Live Site</h3>
+    <table>
+      <thead>
+        <tr><th>Stage</th><th>What Happens</th><th>Your Involvement</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1. Boss pushes a branch</td>
+          <td>His work is saved on GitHub</td>
+          <td>None — you'll review when ready</td>
+        </tr>
+        <tr>
+          <td>2. Fetch his branches</td>
+          <td>His branches download to your machine silently</td>
+          <td>Tell Hermes "fetch the boss's latest"</td>
+        </tr>
+        <tr>
+          <td>3. Preview his branch</td>
+          <td>A second Railway URL spins up showing his branch live</td>
+          <td>Click around it, decide what you like</td>
+        </tr>
+        <tr>
+          <td>4. Cherry-pick what you want</td>
+          <td>Specific saves copied into your branch</td>
+          <td>Tell Hermes "I want his profit table change"</td>
+        </tr>
+        <tr>
+          <td>5. Push to your GitHub</td>
+          <td>Your repo now contains the cherry-picked piece</td>
+          <td>Hermes handles the push</td>
+        </tr>
+        <tr>
+          <td>6. Railway redeploys</td>
+          <td>Your live site updates with the new piece</td>
+          <td>Check your main URL — it's live</td>
         </tr>
       </tbody>
     </table>
