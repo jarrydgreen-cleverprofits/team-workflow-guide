@@ -467,11 +467,11 @@
       </div>
     </div>
     <p>Here's a practical example of how this all works in the real world.</p>
-    <p>You spend your day building out a financial report. Employee Y, based in America, jumps on in the evening and makes a series of his own changes to his version of the project. By the time you're back at your desk the next morning, he's done a bunch of work.</p>
-    <p>Now you have two options and you need to decide: <em>"Which of his changes do I actually want? And which ones do I want to leave out?"</em></p>
+    <p>You spend your day building out a financial report. Employee Y, based in America, jumps on in the evening and makes a series of their own changes to their version of the project. By the time you're back at your desk the next morning, they've done a bunch of work.</p>
+    <p>Now you have two options and you need to decide: <em>"Which of their changes do I actually want? And which ones do I want to leave out?"</em></p>
 
     <div class="callout orange">
-      <strong>The setup is called a Fork.</strong> You have your own independent copy of the project. His copy is labelled the "original" (called the <strong>upstream</strong>). You can see every change he's ever made — but nothing he does automatically lands in yours. You decide what comes in and when.
+      <strong>The setup is called a Fork.</strong> You have your own independent copy of the project. Their copy is labelled the "original" (called the <strong>upstream</strong>). You can see every change they've ever made — but nothing they do automatically lands in yours. You decide what comes in and when.
     </div>
 
     <!-- TIMELINE DIAGRAM -->
@@ -528,20 +528,20 @@
         <!-- Middle label -->
         <text x="350" y="175" text-anchor="middle" font-size="11" fill="#9CA3AF" font-style="italic">You choose exactly what comes into your project</text>
       </svg>
-      <p class="diagram-caption">Both timelines run independently. You pick which of his changes you want — nothing is automatic.</p>
+      <p class="diagram-caption">Both timelines run independently. You pick which of their changes you want — nothing is automatic.</p>
     </div>
 
     <p>In practical terms this means:</p>
     <p style="margin-left:1.2rem;">
       &nbsp;✦&nbsp; You can see every branch and change Employee Y has made<br/>
-      &nbsp;✦&nbsp; You preview his changes before deciding<br/>
+      &nbsp;✦&nbsp; You preview their changes before deciding<br/>
       &nbsp;✦&nbsp; You bring in only what you want — one piece at a time if needed<br/>
       &nbsp;✦&nbsp; Your project stays unaffected until <em>you</em> decide otherwise<br/>
-      &nbsp;✦&nbsp; If you later want his change 4, you can pull it in at any time
+      &nbsp;✦&nbsp; If you later want their change 4, you can pull it in at any time
     </p>
 
     <div class="callout green">
-      <strong>The golden rule:</strong> Nothing crosses from his project into yours automatically. You are always in control of what enters your project and when.
+      <strong>The golden rule:</strong> Nothing crosses from their project into yours automatically. You are always in control of what enters your project and when.
     </div>
 
     <!-- HOW IT WORKS IN PRACTICE TABLE -->
@@ -556,7 +556,7 @@
       <tbody>
         <tr>
           <td>Employee Y makes a change you love</td>
-          <td>Tell Hermes: "Bring in his Feature X"</td>
+          <td>Tell Hermes: "Bring in their Feature X"</td>
           <td>That specific piece is copied into your project cleanly</td>
         </tr>
         <tr>
@@ -567,12 +567,12 @@
         <tr>
           <td>Employee Y makes a change you don't want</td>
           <td>Do nothing</td>
-          <td>It stays in his project, never affects yours</td>
+          <td>It stays in their project, never affects yours</td>
         </tr>
         <tr>
           <td>You want everything he did last night</td>
           <td>Tell Hermes: "Sync from Employee Y's latest"</td>
-          <td>All his recent changes come in at once</td>
+          <td>All their recent changes come in at once</td>
         </tr>
       </tbody>
     </table>
@@ -587,7 +587,7 @@
         <h2>Getting Access to Each Other's GitHub</h2>
       </div>
     </div>
-    <p>Before you can see Employee Y's branches, borrow his code, or share yours with him — you need to be able to see each other's GitHub repositories. This section explains how that works from scratch.</p>
+    <p>Before you can see Employee Y's branches, borrow their code, or share yours with them — you need to be able to see each other's GitHub repositories. This section explains how that works from scratch.</p>
 
     <h3 style="font-size:1.2rem;font-weight:700;color:#1A1A2E;margin:1.5rem 0 0.8rem;">Two Types of Repositories</h3>
     <p>Every project on GitHub is stored in a <strong>repository</strong> — think of it as a folder in the cloud that holds all the code, all the save points, and all the branches for one project. Every repository is either:</p>
@@ -650,7 +650,7 @@
     </div>
 
     <div class="callout green">
-      <strong>What to share:</strong> All you need is the other person's <strong>GitHub username</strong>. That's their handle on GitHub — for example <em>jarrydgreen-cleverprofits</em>. Ask Employee Y for his, share yours with him, and Hermes can handle the rest if needed.
+      <strong>What to share:</strong> All you need is the other person's <strong>GitHub username</strong>. That's their handle on GitHub — for example <em>jarrydgreen-cleverprofits</em>. Ask Employee Y for theirs, share yours with them, and Hermes can handle the rest if needed.
     </div>
 
     <h3 style="font-size:1.2rem;font-weight:700;color:#1A1A2E;margin:1.5rem 0 0.8rem;">Two Ways to Connect to Someone's Repository</h3>
@@ -673,16 +673,16 @@
     </table>
 
     <div class="callout orange">
-      <strong>In our scenario:</strong> Jarryd works on his own dashboard project during the day. Employee Y in America works on his version in the evenings. Jarryd's repository has Employee Y's repository added as an <strong>upstream</strong> — meaning Jarryd can see every branch and every save Employee Y has made, at any time, and choose exactly what to bring in. Employee Y's project is unaffected either way.
+      <strong>In our scenario:</strong> Jarryd works on their own dashboard project during the day. Employee Y in America works on their version in the evenings. Jarryd's repository has Employee Y's repository added as an <strong>upstream</strong> — meaning Jarryd can see every branch and every save Employee Y has made, at any time, and choose exactly what to bring in. Employee Y's project is unaffected either way.
     </div>
 
     <h3 style="font-size:1.2rem;font-weight:700;color:#1A1A2E;margin:1.5rem 0 0.8rem;">How to Get the Information — Fetching</h3>
     <p>Once access is set up, getting Employee Y's latest work onto your machine is a single instruction to Hermes: <em>"Fetch Employee Y's latest branches."</em></p>
     <p>What happens behind the scenes:</p>
     <p style="margin-left:1.2rem;">
-      &nbsp;✦&nbsp; GitHub downloads a copy of all his branches silently to your machine<br/>
+      &nbsp;✦&nbsp; GitHub downloads a copy of all their branches silently to your machine<br/>
       &nbsp;✦&nbsp; <strong>Nothing in your project changes</strong> — you are just downloading so you can look<br/>
-      &nbsp;✦&nbsp; Hermes then lists what branches he has, with a plain English summary of each<br/>
+      &nbsp;✦&nbsp; Hermes then lists what branches they have, with a plain English summary of each<br/>
       &nbsp;✦&nbsp; You decide which ones interest you — then move to the preview or cherry-pick steps
     </p>
 
@@ -724,7 +724,7 @@
     </div>
 
     <div class="callout blue">
-      <strong>Remember:</strong> You never do any of this manually. You tell Hermes in plain English — "Fetch Employee Y's latest" or "show me his branches" — and it handles everything. GitHub and Railway are working in the background. You just make the decisions.
+      <strong>Remember:</strong> You never do any of this manually. You tell Hermes in plain English — "Fetch Employee Y's latest" or "show me their branches" — and it handles everything. GitHub and Railway are working in the background. You just make the decisions.
     </div>
   </div>
 
@@ -737,10 +737,10 @@
         <h2>Getting Employee Y's Work Into Yours — Step by Step</h2>
       </div>
     </div>
-    <p>Employee Y has been building on his project. He's created branches on GitHub. Here's exactly how you get what you want from his project into yours — safely, selectively, and without touching anything you didn't choose to touch.</p>
+    <p>Employee Y has been building on their project. He's created branches on GitHub. Here's exactly how you get what you want from their project into yours — safely, selectively, and without touching anything you didn't choose to touch.</p>
 
     <div class="callout blue">
-      <strong>Remember:</strong> Railway deploys from <em>your</em> GitHub. His code never goes directly to your live site — it always passes through your GitHub first. You are always the gatekeeper.
+      <strong>Remember:</strong> Railway deploys from <em>your</em> GitHub. Their code never goes directly to your live site — it always passes through your GitHub first. You are always the gatekeeper.
     </div>
 
     <!-- THE 3-STEP FLOW -->
@@ -754,13 +754,13 @@
         <!-- Step 1 -->
         <rect x="20" y="40" width="180" height="70" rx="10" fill="#EBF4FF" stroke="#1E6FCC" stroke-width="2"/>
         <text x="110" y="68" text-anchor="middle" font-size="13" font-weight="700" fill="#1E6FCC">Step 1</text>
-        <text x="110" y="86" text-anchor="middle" font-size="11" fill="#333">Fetch his branches</text>
+        <text x="110" y="86" text-anchor="middle" font-size="11" fill="#333">Fetch their branches</text>
         <text x="110" y="102" text-anchor="middle" font-size="10" fill="#6B7280">(download, don't change anything)</text>
         <line x1="200" y1="75" x2="248" y2="75" stroke="#9CA3AF" stroke-width="2" marker-end="url(#step-arr)"/>
         <!-- Step 2 -->
         <rect x="250" y="40" width="180" height="70" rx="10" fill="#FEF3E7" stroke="#E87B2B" stroke-width="2"/>
         <text x="340" y="68" text-anchor="middle" font-size="13" font-weight="700" fill="#E87B2B">Step 2</text>
-        <text x="340" y="86" text-anchor="middle" font-size="11" fill="#333">Preview his branch live</text>
+        <text x="340" y="86" text-anchor="middle" font-size="11" fill="#333">Preview their branch live</text>
         <text x="340" y="102" text-anchor="middle" font-size="10" fill="#6B7280">(separate Railway URL, safe)</text>
         <line x1="430" y1="75" x2="478" y2="75" stroke="#9CA3AF" stroke-width="2" marker-end="url(#step-arr)"/>
         <!-- Step 3 -->
@@ -775,14 +775,14 @@
 
     <!-- WHAT IS CHERRY-PICKING -->
     <h3 style="font-size:1.25rem; font-weight:700; color:#1A1A2E; margin:2rem 0 0.8rem;">What Is Cherry-Picking?</h3>
-    <p>Imagine Employee Y made 10 changes last night. They're all bundled together in his branch. You look through them and think:</p>
+    <p>Imagine Employee Y made 10 changes last night. They're all bundled together in their branch. You look through them and think:</p>
     <p style="margin-left:1.2rem; font-style:italic; color:#555;">
       "I love changes 3 and 7. Changes 1, 2, 4, 5, 6, 8, 9, and 10 I'm not ready for yet."
     </p>
-    <p>Cherry-picking lets you take <strong>exactly changes 3 and 7</strong> — nothing else. They land in your project cleanly, as if you had written them yourself. The other 8 changes stay in his project untouched.</p>
+    <p>Cherry-picking lets you take <strong>exactly changes 3 and 7</strong> — nothing else. They land in your project cleanly, as if you had written them yourself. The other 8 changes stay in their project untouched.</p>
 
     <div class="callout orange">
-      <strong>Analogy:</strong> Think of Employee Y's branch like a fruit bowl with 10 pieces of fruit. You don't have to take the whole bowl. You pick the two cherries you want, leave the rest in his bowl, and put your two cherries into your own bowl. His bowl is still full. Yours now has exactly what you wanted.
+      <strong>Analogy:</strong> Think of Employee Y's branch like a fruit bowl with 10 pieces of fruit. You don't have to take the whole bowl. You pick the two cherries you want, leave the rest in their bowl, and put your two cherries into your own bowl. Their bowl is still full. Yours now has exactly what you wanted.
     </div>
 
     <!-- CHERRY-PICK DIAGRAM -->
@@ -874,7 +874,7 @@
     <p>Without cherry-picking, your only options would be: take everything or take nothing. That's a problem because:</p>
     <p style="margin-left:1.2rem;">
       &nbsp;✦&nbsp; Employee Y might bundle a feature you love with a change that breaks your layout<br/>
-      &nbsp;✦&nbsp; You might not be ready for all his changes yet — but you need one specific piece now<br/>
+      &nbsp;✦&nbsp; You might not be ready for all their changes yet — but you need one specific piece now<br/>
       &nbsp;✦&nbsp; You might want to test one piece in isolation before committing to the rest
     </p>
     <p>Cherry-picking solves all three problems. It is arguably the most important tool in a collaborative coding workflow.</p>
@@ -903,9 +903,9 @@
           <td>You won't know which save contains what you're looking for</td>
         </tr>
         <tr>
-          <td>Access to his repository</td>
-          <td>You need to be able to see his GitHub project (public or invited)</td>
-          <td>You can't fetch his branches if you can't see his repo</td>
+          <td>Access to their repository</td>
+          <td>You need to be able to see their GitHub project (public or invited)</td>
+          <td>You can't fetch their branches if you can't see their repo</td>
         </tr>
         <tr>
           <td>No conflicting changes</td>
@@ -916,7 +916,7 @@
     </table>
 
     <div class="callout green">
-      <strong>The golden rule for your Employee Y:</strong> Ask him to make small, focused saves with clear labels. One feature per save. This makes cherry-picking trivial — you can see exactly what each save does and take it or leave it in seconds.
+      <strong>The golden rule for Employee Y:</strong> Ask them to make small, focused saves with clear labels. One feature per save. This makes cherry-picking trivial — you can see exactly what each save does and take it or leave it in seconds.
     </div>
 
     <!-- CONFLICT EXPLAINED -->
@@ -928,7 +928,7 @@
     <p>In practice, conflicts are rare if you and Employee Y are working on different parts of the project. The more separated your work areas, the smoother cherry-picking becomes.</p>
 
     <!-- SUMMARY WORKFLOW -->
-    <h3 style="font-size:1.25rem; font-weight:700; color:#1A1A2E; margin:2rem 0 0.8rem;">The Full Workflow — From His Branch to Your Live Site</h3>
+    <h3 style="font-size:1.25rem; font-weight:700; color:#1A1A2E; margin:2rem 0 0.8rem;">The Full Workflow — From Employee Y's Branch to Your Live Site</h3>
     <table>
       <thead>
         <tr><th>Stage</th><th>What Happens</th><th>Your Involvement</th></tr>
@@ -940,19 +940,19 @@
           <td>None — you'll review when ready</td>
         </tr>
         <tr>
-          <td>2. Fetch his branches</td>
+          <td>2. Fetch their branches</td>
           <td>His branches download to your machine silently</td>
           <td>Tell Hermes "Fetch Employee Y's latest"</td>
         </tr>
         <tr>
-          <td>3. Preview his branch</td>
-          <td>A second Railway URL spins up showing his branch live</td>
+          <td>3. Preview their branch</td>
+          <td>A second Railway URL spins up showing their branch live</td>
           <td>Click around it, decide what you like</td>
         </tr>
         <tr>
           <td>4. Cherry-pick what you want</td>
           <td>Specific saves copied into your branch</td>
-          <td>Tell Hermes "I want his profit table change"</td>
+          <td>Tell Hermes "I want their profit table change"</td>
         </tr>
         <tr>
           <td>5. Push to your GitHub</td>
