@@ -242,9 +242,14 @@
     </div>
     <p>Imagine four people building a puzzle — but they're all sitting at the same table, reaching over each other, accidentally moving each other's pieces. Chaos.</p>
     <p>Software teams face the exact same problem. If everyone edits the same code at the same time, work gets overwritten, bugs appear from nowhere, and nobody knows what changed or when.</p>
-    <p>This guide explains the system we use so everyone can work freely — and how great ideas can still be shared between projects.</p>
+    <p>This guide explains exactly how <strong>our team</strong> avoids that — using three tools you will hear about throughout this document:</p>
+    <p style="margin-left:1.2rem;">
+      &nbsp;✦&nbsp; <strong>GitHub</strong> — where all our code lives and is saved. Think of it as our shared filing cabinet in the cloud.<br/>
+      &nbsp;✦&nbsp; <strong>Railway</strong> — the platform that takes our code and turns it into a live, working website or dashboard.<br/>
+      &nbsp;✦&nbsp; <strong>Claude (Hermes)</strong> — the AI assistant in the terminal that runs all the technical commands on your behalf. When this guide says "tell Hermes to do X", that means you type a plain English instruction and it handles everything behind the scenes.
+    </p>
     <div class="callout blue">
-      <strong>The goal:</strong> Every person works independently, progress is always visible, and good work can be shared without breaking anything.
+      <strong>The goal:</strong> Every person works independently in their own space, all progress is always visible, and good work can be shared between projects without breaking anything — all without needing to know a single line of code.
     </div>
   </div>
 
@@ -254,15 +259,21 @@
       <div class="section-icon" style="background:#EBF4FF;">📦</div>
       <div>
         <span class="num">Section 2</span>
-        <h2>The Sandbox — Your Own Private Workspace</h2>
+        <h2>The Sandbox — Your Own Private Workspace on Railway</h2>
       </div>
     </div>
-    <p>Think of each project like a separate LEGO set stored in its own box.</p>
-    <p>Alex's LEGO box only contains Alex's pieces. Sam can't accidentally knock over Alex's creation. A manager can open any box at any time to check progress — but just by looking, they can't accidentally move any pieces.</p>
-    <p>In software terms, each person works inside their own <strong>Project</strong> on our platform (Railway). Their work lives there, runs there, and is tested there — completely separately from everyone else.</p>
+    <p>In our world, a <strong>sandbox is a Railway environment</strong>. Let's explain what that means from scratch.</p>
+    <p>When we set up a project on Railway, we don't just get one version of it — we can have multiple <strong>environments</strong> running at the same time, each with its own live URL, each completely separate from the others. For example:</p>
+    <p style="margin-left:1.2rem;">
+      &nbsp;✦&nbsp; <strong>production</strong> — the live dashboard your clients or stakeholders actually see<br/>
+      &nbsp;✦&nbsp; <strong>staging</strong> — a private copy where we test changes before they go live<br/>
+      &nbsp;✦&nbsp; <strong>preview</strong> — a temporary environment to run someone else's work before deciding whether to bring it in
+    </p>
+    <p>Each environment is its own sandbox. You can break the preview environment completely and production never flinches. Nothing crosses between them unless you deliberately move it.</p>
+    <p>Think of each project like a separate LEGO set stored in its own box. Jarryd's box only contains Jarryd's pieces. His boss in America is working in a completely separate box on Railway. A manager can look into any box at any time — but just by looking, they can't accidentally move any pieces.</p>
 
     <div class="callout blue">
-      <strong>Analogy:</strong> It's like each person having their own whiteboard in a separate room. You can walk in and look at anyone's whiteboard, but writing on yours doesn't change theirs.
+      <strong>In our tools:</strong> The sandbox is your Railway environment. GitHub holds the code. Railway takes that code and makes it live. Each person has their own GitHub repository and their own Railway environment — they are completely independent. Hermes (Claude) is the one who creates, manages, and deploys these environments when you ask.
     </div>
 
     <!-- DIAGRAM 1: SANDBOX -->
@@ -306,7 +317,7 @@
         <rect x="520" y="146" width="160" height="34" rx="7" fill="#7B5EA722" stroke="#7B5EA7" stroke-width="1.2"/>
         <text x="600" y="168" text-anchor="middle" font-size="12" fill="#533d72">Feature I</text>
       </svg>
-      <p class="diagram-caption">Each person works in their own isolated box — no accidental interference.</p>
+      <p class="diagram-caption">Each person has their own Railway environment and GitHub repository — completely isolated. No accidental interference.</p>
     </div>
   </div>
 
@@ -316,14 +327,18 @@
       <div class="section-icon" style="background:#EAFAF1;">💾</div>
       <div>
         <span class="num">Section 3</span>
-        <h2>The Save System — Never Lose Your Work</h2>
+        <h2>The Save System — How GitHub Remembers Everything</h2>
       </div>
     </div>
-    <p>Every time a developer finishes a meaningful piece of work — even something small — they create a labelled snapshot. Think of it like saving a video game at a checkpoint.</p>
-    <p>Each save records <strong>what changed</strong>, <strong>who made it</strong>, and <strong>when</strong>. This means you can always rewind to any earlier version if something goes wrong. Nothing is ever permanently broken.</p>
+    <p>Every time a meaningful piece of work is finished — even something small — it gets saved to <strong>GitHub</strong> with a label. In GitHub's language this is called a <strong>commit</strong>. You do not need to remember that word — just think of it as a named save point.</p>
+    <p>Each save on GitHub automatically records <strong>what changed</strong>, <strong>who made it</strong>, and <strong>exactly when</strong>. This means we can always rewind to any earlier version if something goes wrong. Nothing is ever permanently broken.</p>
+    <p>When Hermes (Claude) finishes a piece of work with you — say, adding a new section to a dashboard — the final step is always to save it to GitHub and then tell Railway to redeploy. That three-step process (<strong>save to GitHub → Railway picks it up → live site updates</strong>) is the heartbeat of everything we do.</p>
 
     <div class="callout green">
-      <strong>Analogy:</strong> Imagine writing an essay in Google Docs. Every few paragraphs you name and save a version — "Draft 1", "After feedback", "Final". You can always go back to any of them.
+      <strong>Analogy:</strong> Imagine writing an essay in Google Docs. Every few paragraphs you name and save a version — "Draft 1", "After feedback", "Final". GitHub is exactly that, but for code. And Railway is the system that publishes whichever version you point it at — instantly making it live for anyone with the link.
+    </div>
+    <div class="callout blue">
+      <strong>In practice:</strong> You never touch GitHub or Railway directly. You tell Hermes what you want in plain English — "save this and deploy it" — and it runs the commands in the terminal behind the scenes. GitHub and Railway are the engines. Hermes is the driver. You are in the passenger seat giving directions.
     </div>
 
     <!-- DIAGRAM 2: SAVE SYSTEM -->
