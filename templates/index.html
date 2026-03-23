@@ -919,6 +919,37 @@
       <strong>The golden rule for Employee Y:</strong> Ask them to make small, focused saves with clear labels. One feature per save. This makes cherry-picking trivial — you can see exactly what each save does and take it or leave it in seconds.
     </div>
 
+    <!-- DECISION TREE -->
+    <h3 style="font-size:1.25rem; font-weight:700; color:#1A1A2E; margin:2rem 0 0.8rem;">Merge or Cherry-Pick — How to Decide</h3>
+    <p>Cherry-picking and merging aren't two different approaches — they're just two points on the same scale. Here's how to decide which one to use:</p>
+
+    <table style="margin-top:1rem;">
+      <thead>
+        <tr><th>Situation</th><th>What You Do</th><th>What It Means</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>You like <strong>everything</strong> in Employee Y's branch</td>
+          <td>Merge the whole branch</td>
+          <td>The entire branch lands in your project at once — fast and complete</td>
+        </tr>
+        <tr>
+          <td>You like <strong>some things</strong> in Employee Y's branch</td>
+          <td>Cherry-pick the specific commits you want</td>
+          <td>Only the pieces you choose come in — everything else stays in their project</td>
+        </tr>
+        <tr>
+          <td>You like <strong>nothing</strong> in Employee Y's branch</td>
+          <td>Do nothing</td>
+          <td>Your project stays completely untouched</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout green">
+      <strong>How to action it:</strong> Just tell Hermes in plain English — "merge Employee Y's Income-Forecast branch into mine" or "I only want their profit margin change." Hermes handles the rest.
+    </div>
+
     <!-- CONFLICT EXPLAINED -->
     <h3 style="font-size:1.25rem; font-weight:700; color:#1A1A2E; margin:2rem 0 0.8rem;">What Is a Conflict — and Should You Worry?</h3>
     <p>A conflict happens when both you and Employee Y have edited the exact same line of code in different ways. Git doesn't know whose version to keep, so it flags it and asks you to decide.</p>
