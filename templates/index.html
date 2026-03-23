@@ -221,6 +221,9 @@
   <a href="#visibility">Visibility</a>
   <a href="#flowchart">Full Flow</a>
   <a href="#reference">Reference</a>
+  <a href="#conflicts">Conflicts</a>
+  <a href="#naming">Branch Names</a>
+  <a href="#confirmDeploy">Confirm Deploy</a>
   <a href="#cheatsheet">Cheat Sheet</a>
 </nav>
 
@@ -1137,6 +1140,159 @@
         </tr>
       </tbody>
     </table>
+  </div>
+
+  <!-- SECTION: WHAT TO DO WHEN THINGS GO WRONG -->
+  <div class="section" id="conflicts">
+    <div class="section-header">
+      <div class="section-icon" style="background:#FFF0F0;">🚨</div>
+      <div>
+        <span class="num">Don't Panic</span>
+        <h2>What to Do When a Conflict Happens</h2>
+      </div>
+    </div>
+    <p>At some point you will attempt to bring in Employee Y's work and GitHub will flag a <strong>conflict</strong>. This is normal. It is not a sign that something is broken. It simply means you and Employee Y both edited the exact same part of the code in different ways — and GitHub needs a human to decide which version wins.</p>
+
+    <div class="callout orange">
+      <strong>Analogy:</strong> You and Employee Y were both editing the same cell in a shared spreadsheet at the same time — with different numbers. The system can't guess which one is correct. It stops and asks you to choose. That's all a conflict is.
+    </div>
+
+    <p>When it happens, here is exactly what to do:</p>
+
+    <table style="margin-top:1rem;">
+      <thead>
+        <tr><th>Step</th><th>What you do</th><th>What happens</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1. Don't close anything</td>
+          <td>Leave the terminal and browser open as they are</td>
+          <td>Nothing is lost — the conflict is just paused, waiting for your decision</td>
+        </tr>
+        <tr>
+          <td>2. Tell Hermes</td>
+          <td>"We have a conflict — can you show me what's clashing?"</td>
+          <td>Hermes shows you exactly which part of the code is in dispute, in plain English</td>
+        </tr>
+        <tr>
+          <td>3. Make the call</td>
+          <td>"Keep my version" or "Use Employee Y's version" or "Use both"</td>
+          <td>Hermes resolves it and continues the merge or cherry-pick</td>
+        </tr>
+        <tr>
+          <td>4. Carry on</td>
+          <td>Nothing else needed</td>
+          <td>The conflict is resolved — your project deploys as normal</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout blue">
+      <strong>Prevention is better than cure:</strong> Conflicts are far less likely when you and Employee Y are working on different parts of the project. The more clearly each person owns a specific area — one person on reports, another on the dashboard header — the less you'll ever cross paths.
+    </div>
+  </div>
+
+  <!-- SECTION: BRANCH NAMING -->
+  <div class="section" id="naming">
+    <div class="section-header">
+      <div class="section-icon" style="background:#EAFAF1;">🏷️</div>
+      <div>
+        <span class="num">Team Standard</span>
+        <h2>How We Name Branches</h2>
+      </div>
+    </div>
+    <p>Branch names are how everyone on the team knows what work is happening and who is doing it — without having to open anything. A good name makes cherry-picking, merging, and reviews dramatically faster.</p>
+    <p>The format we use is:</p>
+
+    <div class="diagram" style="text-align:center; padding:2rem;">
+      <svg width="580" height="90" viewBox="0 0 580 90" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10"  y="20" width="160" height="50" rx="10" fill="#EBF4FF" stroke="#1E6FCC" stroke-width="2"/>
+        <text x="90"  y="42" text-anchor="middle" font-size="13" font-weight="700" fill="#1E6FCC">your-name</text>
+        <text x="90"  y="60" text-anchor="middle" font-size="10" fill="#6B7280">who built it</text>
+
+        <text x="192" y="50" text-anchor="middle" font-size="20" fill="#9CA3AF">/</text>
+
+        <rect x="210" y="20" width="360" height="50" rx="10" fill="#EAFAF1" stroke="#2AAD6E" stroke-width="2"/>
+        <text x="390" y="42" text-anchor="middle" font-size="13" font-weight="700" fill="#2AAD6E">what-it-does</text>
+        <text x="390" y="60" text-anchor="middle" font-size="10" fill="#6B7280">short description, words separated by hyphens</text>
+      </svg>
+    </div>
+
+    <p><strong>Examples:</strong></p>
+    <p style="margin-left:1.2rem;">
+      &nbsp;✦&nbsp; <code style="background:#F4F5F7;padding:2px 7px;border-radius:4px;font-size:0.95rem;">jarryd/income-forecast-table</code><br/><br/>
+      &nbsp;✦&nbsp; <code style="background:#F4F5F7;padding:2px 7px;border-radius:4px;font-size:0.95rem;">employee-y/owners-draw-fix</code><br/><br/>
+      &nbsp;✦&nbsp; <code style="background:#F4F5F7;padding:2px 7px;border-radius:4px;font-size:0.95rem;">jarryd/dashboard-header-redesign</code>
+    </p>
+
+    <div class="callout green">
+      <strong>The rule:</strong> If someone reads your branch name and can't immediately tell what it does — rename it. A branch called <code style="background:#EAFAF1;padding:2px 6px;border-radius:4px;">update</code> or <code style="background:#EAFAF1;padding:2px 6px;border-radius:4px;">test123</code> tells nobody anything. A branch called <code style="background:#EAFAF1;padding:2px 6px;border-radius:4px;">jarryd/profit-margin-column</code> tells everyone everything.
+    </div>
+  </div>
+
+  <!-- SECTION: CONFIRMING A DEPLOY -->
+  <div class="section" id="confirmDeploy">
+    <div class="section-header">
+      <div class="section-icon" style="background:#EAFAF1;">✅</div>
+      <div>
+        <span class="num">Closing the Loop</span>
+        <h2>How to Confirm a Deploy Actually Worked</h2>
+      </div>
+    </div>
+    <p>After saving your work and deploying, how do you know it actually went live? There are two places to check — and you only need one of them.</p>
+
+    <table style="margin-top:1rem;">
+      <thead>
+        <tr><th>Where to check</th><th>What to look for</th><th>What it means</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Your live Railway URL</td>
+          <td>Open it in a browser and refresh — your change should be visible</td>
+          <td>If you can see the change, the deploy worked</td>
+        </tr>
+        <tr>
+          <td>Railway dashboard</td>
+          <td>Go to railway.com → your project → look for a green tick next to the latest deployment</td>
+          <td>Green tick = successful. Red cross = something went wrong</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout green">
+      <strong>Green tick on Railway = you're live.</strong> If you see a red cross, just tell Hermes "the deploy failed — what happened?" and it will read the error log and fix it for you.
+    </div>
+
+    <p>You can also ask Hermes at any time: <em>"Is my latest deploy live?"</em> — it will check Railway and give you a straight answer.</p>
+
+    <div class="diagram">
+      <svg width="620" height="130" viewBox="0 0 620 130" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="dep-arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#9CA3AF"/>
+          </marker>
+        </defs>
+        <rect x="10"  y="30" width="140" height="60" rx="10" fill="#EBF4FF" stroke="#1E6FCC" stroke-width="2"/>
+        <text x="80"  y="57" text-anchor="middle" font-size="12" font-weight="700" fill="#1E6FCC">You tell Hermes</text>
+        <text x="80"  y="75" text-anchor="middle" font-size="10" fill="#555">"Save and deploy"</text>
+        <line x1="150" y1="60" x2="188" y2="60" stroke="#9CA3AF" stroke-width="2" marker-end="url(#dep-arr)"/>
+
+        <rect x="190" y="30" width="140" height="60" rx="10" fill="#EBF4FF" stroke="#1E6FCC" stroke-width="2"/>
+        <text x="260" y="57" text-anchor="middle" font-size="12" font-weight="700" fill="#1E6FCC">GitHub</text>
+        <text x="260" y="75" text-anchor="middle" font-size="10" fill="#555">Code saved</text>
+        <line x1="330" y1="60" x2="368" y2="60" stroke="#9CA3AF" stroke-width="2" marker-end="url(#dep-arr)"/>
+
+        <rect x="370" y="30" width="140" height="60" rx="10" fill="#EAFAF1" stroke="#2AAD6E" stroke-width="2"/>
+        <text x="440" y="57" text-anchor="middle" font-size="12" font-weight="700" fill="#2AAD6E">Railway</text>
+        <text x="440" y="75" text-anchor="middle" font-size="10" fill="#555">Builds + deploys</text>
+        <line x1="510" y1="60" x2="548" y2="60" stroke="#9CA3AF" stroke-width="2" marker-end="url(#dep-arr)"/>
+
+        <rect x="550" y="30" width="60" height="60" rx="10" fill="#EAFAF1" stroke="#2AAD6E" stroke-width="2"/>
+        <text x="580" y="65" text-anchor="middle" font-size="22" fill="#2AAD6E">✓</text>
+
+        <text x="310" y="118" text-anchor="middle" font-size="11" fill="#9CA3AF" font-style="italic">The whole process takes under 2 minutes. Green tick = you're live.</text>
+      </svg>
+    </div>
   </div>
 
   <!-- CHEAT SHEET -->
